@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
 
     g.DFS('a')
-
+    g.BFS('a')
     
     g2 = Grafo()
     g2.agregarVertice('a')
