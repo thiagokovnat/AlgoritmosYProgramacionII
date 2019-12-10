@@ -1,3 +1,6 @@
+import heapq
+import math
+
 class Vertice():
 
 	def __init__(self, clave):
@@ -11,13 +14,19 @@ class Vertice():
 		self.adyacentes[claveAdyacente] = peso
 
 	def getAdyacentes(self):
+		
 		return self.adyacentes.keys()
 
 	def getClave(self):
 		return self.clave
 
 	def getPeso(self, adyacente):
-		return self.adyacentes[adyacente]
+		print(adyacente)
+		print(type(adyacente))
+		if adyacente in self.adyacentes.keys():
+			return self.adyacentes[adyacente]
+		else:
+			return float("inf")
 
 	def getMinPeso(self):
 
@@ -59,6 +68,12 @@ class Grafo():
 	def getVertices(self):
 		return self.vertices.keys()
 
+	def getClave(self, vertice):
+		for key, value in self.vertices.items():
+			if value == vertice:
+				return key
+
+		return None
 
 	def BFS(self, inicio):
 
@@ -93,6 +108,28 @@ class Grafo():
 			if adyacente not in visitados:
 				visitados.append(adyacente)
 				self.DFSUtil(adyacente, visitados)
+
+	def caminoMinimo(self, origen):
+		padre = {}
+		distancia = {}
+		for vertice in self:
+			distancia[vertice] = math.inf
+
+		distancia[origen] = 0
+		padre[origen] = None
+		heap = []
+		heapq.heappush(heap, (0, origen))
+		while len(heap) > 0:
+			vertice = heapq.heappop(heap)
+			for w in self.vertices[vertice[1]].getAdyacentes():
+				if distancia[vertice[1]] + self.vertices[vertice[1]].getPeso(w) < distancia[w.getClave()]:
+					distancia[w] = distancia[vertice[1]] + self.vertices[vertice[1]].getPeso(w.getClave())
+					padre[w] = vertice[1]
+					heapq.heappush(heap, (distancia[w.getClave()], w.getClave()))	
+
+		return padre, distancia
+
+
 
 
 

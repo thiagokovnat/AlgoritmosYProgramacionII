@@ -21,19 +21,21 @@ if __name__ == '__main__':
     g.agregarArista('c', 'f', 2)
     g.agregarArista('d', 'e', 6)
     g.agregarArista('e', 'f', 9)
-
-
+    g.caminoMinimo('a')
+"""
     for v in g:
         print(v)
         for w in v.getAdyacentes():
             vid = v.getClave()
             wid = w.getClave()
             print ('( %s , %s, %3d)'  % ( vid, wid, v.getPeso(w)))
+"""
 
+ #  g.DFS('a')
+ #  g.BFS('a')
 
-    g.DFS('a')
-    g.BFS('a')
-    
+   
+"""  
     g2 = Grafo()
     g2.agregarVertice('a')
     g2.agregarVertice('b')					
@@ -48,6 +50,7 @@ if __name__ == '__main__':
     g2.agregarArista('b', 'd', 0)
     g2.agregarArista('d', 'e', 0)
     g2.agregarArista('e', 'a', 0)
-    g2.DFS('a')
+   # g2.DFS('a')
 
-    g2.BFS('a')
+    #g2.BFS('a')
+"""
