@@ -1,0 +1,31 @@
+#ifndef __PRUEBAS_H__
+#define __PRUEBAS_H__
+
+
+void siInsertoYBorroEnListaNULLDeberiaDevolverError();
+
+void siIntentoVerElUltimoEnListaVaciaDeberiaDevolverNULL();
+
+void siIntentoVerElementoEnPosicionEnListaVaciaDeberiaDevolverNULL();
+
+void siInsertoElementosListaElementosDeberiaDevolverLaCantidadDeElementosInsertados();
+
+void siInsertoYBorroMismaCantidadDeElementosListaVaciaDeberiaDevolverTrue();
+
+void siInsertoElementosEnDistintasPoisicionesVerElementoPosicionDeberiaDevolverLosElementos();
+
+void siBorroElementosEnDistintasPosicionesVerElementoPosicionNoDeberiaDevolverEsosElementos();
+
+void siCreoUnIteradorConListaNulaDeberiaDevolverNULL();
+
+void siRecorroTodaLaListaConElIteradorDeberiaDevolverTodosLosElementos();
+
+void siCreoUnIteradorSobreListaNoVaciaTieneSiguienteDeberiaDevolverTrue();
+
+void tieneSiguienteDeberiaDevolverFalseSiEstoyEnElUltimoElemento();
+
+void imprimirElementosUsandoIteradorInterno();
+//void insertar_cant();
+
+
+#endif /*__PRUEBAS_H__*/
