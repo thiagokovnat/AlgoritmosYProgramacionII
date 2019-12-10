@@ -109,7 +109,8 @@ class Grafo():
 				visitados.append(adyacente)
 				self.DFSUtil(adyacente, visitados)
 
-	def caminoMinimo(self, origen):
+	def caminoMinimo(self, origen): 
+		#TODO: Terminar de implementar dijkstra
 		padre = {}
 		distancia = {}
 		for vertice in self:
